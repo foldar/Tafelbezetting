@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tafelbezetting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cbff094fd47195f4971d907b800fc4449037c951")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tafelbezetting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tafelbezetting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

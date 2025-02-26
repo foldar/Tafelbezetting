@@ -2688,11 +2688,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.csproj",
+      "projectUniqueName": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.csproj",
       "projectName": "Tafelbezetting",
-      "projectPath": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.csproj",
+      "projectPath": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.csproj",
       "packagesPath": "C:\\Users\\NicoFelten\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\obj\\",
+      "outputPath": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

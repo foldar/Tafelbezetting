@@ -30,6 +30,7 @@
         {
             tabMain = new TabControl();
             tabDBConnection = new TabPage();
+            btnCreateDB = new Button();
             btnConnect = new Button();
             lblMessage = new Label();
             txtPassword = new TextBox();
@@ -90,7 +91,6 @@
             clmDagdeel = new DataGridViewTextBoxColumn();
             clmGebruiker2 = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            btnCreateDB = new Button();
             tabMain.SuspendLayout();
             tabDBConnection.SuspendLayout();
             tabGebruikers.SuspendLayout();
@@ -132,6 +132,16 @@
             tabDBConnection.TabIndex = 3;
             tabDBConnection.Text = "DB-Connection";
             tabDBConnection.UseVisualStyleBackColor = true;
+            // 
+            // btnCreateDB
+            // 
+            btnCreateDB.Location = new Point(99, 326);
+            btnCreateDB.Name = "btnCreateDB";
+            btnCreateDB.Size = new Size(153, 26);
+            btnCreateDB.TabIndex = 8;
+            btnCreateDB.Text = "Create MySQL Database";
+            btnCreateDB.UseVisualStyleBackColor = true;
+            btnCreateDB.Click += btnCreateDB_Click;
             // 
             // btnConnect
             // 
@@ -251,6 +261,7 @@
             btnNew0.TabIndex = 10;
             btnNew0.Text = "New";
             btnNew0.UseVisualStyleBackColor = true;
+            btnNew0.Click += btnNew0_Click;
             // 
             // btnDelete0
             // 
@@ -414,6 +425,7 @@
             btnSave1.TabIndex = 16;
             btnSave1.Text = "Save";
             btnSave1.UseVisualStyleBackColor = true;
+            btnSave1.Click += btnSave1_Click;
             // 
             // btnNew1
             // 
@@ -423,6 +435,7 @@
             btnNew1.TabIndex = 15;
             btnNew1.Text = "New";
             btnNew1.UseVisualStyleBackColor = true;
+            btnNew1.Click += btnNew1_Click;
             // 
             // btnDelete1
             // 
@@ -715,16 +728,6 @@
             label1.Size = new Size(38, 15);
             label1.TabIndex = 2;
             label1.Text = "label1";
-            // 
-            // btnCreateDB
-            // 
-            btnCreateDB.Location = new Point(99, 326);
-            btnCreateDB.Name = "btnCreateDB";
-            btnCreateDB.Size = new Size(153, 26);
-            btnCreateDB.TabIndex = 8;
-            btnCreateDB.Text = "Create MySQL Database";
-            btnCreateDB.UseVisualStyleBackColor = true;
-            btnCreateDB.Click += btnCreateDB_Click;
             // 
             // frmTafelBezetting
             // 

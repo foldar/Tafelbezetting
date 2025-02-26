@@ -13,6 +13,8 @@ using MySql.Data.MySqlClient;
 using Mysqlx.Expr;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
+using Mysqlx.Crud;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Tafelbezetting
 {
@@ -782,6 +784,18 @@ namespace Tafelbezetting
 
         }
 
+        private void btnNew0_Click(object sender, EventArgs e)
+        {
+            mbooTab0New = true;
+            UnlockTab0();
+        }
+
+        private void btnNew1_Click(object sender, EventArgs e)
+        {
+            mbooTab1New = true;
+            UnlockTab1();
+        }
+
         private void btnSave0_Click(object sender, EventArgs e)
         {
             if (mbooTab0New == false)
@@ -817,13 +831,105 @@ namespace Tafelbezetting
                 {
                     er = er;
                 }
-                ClearTab0();
-                LockTab0();
-                LoadGebruikers();
-                FillGebruikers();
-                LoadTafelGebruikers();
-                FillTafelGebruikers();
             }
+            else
+            {
+                //INSERT Query
+                string strQuery;
+                strQuery = "INSERT INTO gebruikers (GebruikersID, Naam, Haslaptop) SELECT coalesce(MAX(GebruikersID),0)+1, '";
+                strQuery = strQuery + txtUserName.Text + "', " + GetQueryValue(chkYes.Checked, chkNo.Checked);
+                strQuery = strQuery + " FROM gebruikers";
+
+                //Execute Query
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = mstrConnectionString;
+
+                try
+                {
+                    conn.Open();
+                    MySqlCommand command = new MySqlCommand(strQuery, conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (MySqlException er)
+                {
+                    er = er;
+                }
+            }
+            ClearTab0();
+            LockTab0();
+            LoadGebruikers();
+            FillGebruikers();
+            LoadTafelGebruikers();
+            FillTafelGebruikers();
+        }
+
+        private void btnSave1_Click(object sender, EventArgs e)
+        {
+            if (mbooTab1New == false)
+            {
+                int intRow;
+                if (grdTafels.SelectedRows.Count == 0)
+                {
+                    intRow = -1;
+                }
+                else
+                {
+                    intRow = grdTafels.SelectedRows[0].Index;
+                }
+
+                //Update Query
+                string strQuery;
+                strQuery = "UPDATE tafels SET ComputerPresent=";
+                strQuery = strQuery + GetQueryValue(chkYes2.Checked, chkNo2.Checked);
+                strQuery = strQuery + " WHERE TafelID=" + txtTafelNr.Text;
+
+                //Execute Query
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = mstrConnectionString;
+
+                try
+                {
+                    conn.Open();
+                    MySqlCommand command = new MySqlCommand(strQuery, conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (MySqlException er)
+                {
+                    er = er;
+                }
+            }
+            else
+            {
+                //INSERT Query
+                string strQuery;
+                strQuery = "INSERT INTO tafels (TafelID, Computerpresent) SELECT coalesce(MAX(TafelID),0)+1, ";
+                strQuery = strQuery + GetQueryValue(chkYes2.Checked, chkNo2.Checked);
+                strQuery = strQuery + " FROM tafels";
+
+                //Execute Query
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = mstrConnectionString;
+
+                try
+                {
+                    conn.Open();
+                    MySqlCommand command = new MySqlCommand(strQuery, conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (MySqlException er)
+                {
+                    er = er;
+                }
+            }
+            ClearTab1();
+            LockTab1();
+            LoadTafels();
+            FillTafels();
+            LoadTafelGebruikers();
+            FillTafelGebruikers();
         }
 
         private void btnDelete0_Click(object sender, EventArgs e)

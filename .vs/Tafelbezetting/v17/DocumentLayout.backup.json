@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\",
+  "WorkspaceRootPath": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|c:\\users\\nicofelten\\source\\repos\\tafelbezetting\\tafelbezetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|c:\\users\\nicofelten\\github\\tafelbezetting\\tafelbezetting\\tafelbezetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|solutionrelative:tafelbezetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\tafelbezetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|c:\\users\\nicofelten\\github\\tafelbezetting\\tafelbezetting\\tafelbezetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|solutionrelative:tafelbezetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|c:\\users\\nicofelten\\source\\repos\\tafelbezetting\\tafelbezetting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|c:\\users\\nicofelten\\github\\tafelbezetting\\tafelbezetting\\tafelbezetting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3CC43A5-D9D4-42B7-B252-9770E9024505}|Tafelbezetting.csproj|solutionrelative:tafelbezetting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Tafelbezetting.cs",
-              "DocumentMoniker": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.cs",
+              "DocumentMoniker": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.cs",
               "RelativeDocumentMoniker": "Tafelbezetting.cs",
-              "ToolTip": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.cs",
+              "ToolTip": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.cs",
               "RelativeToolTip": "Tafelbezetting.cs",
-              "ViewState": "AgIAAEUBAAAAAAAAAAAAAFgBAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAIIDAAAAAAAAAAAYwI4DAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T12:25:55.376Z",
               "EditorCaption": ""
@@ -41,9 +41,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Tafelbezetting.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.cs",
+              "DocumentMoniker": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.cs",
               "RelativeDocumentMoniker": "Tafelbezetting.cs",
-              "ToolTip": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.cs [Design]",
+              "ToolTip": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.cs [Design]",
               "RelativeToolTip": "Tafelbezetting.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T13:02:28.44Z",
@@ -53,11 +53,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Tafelbezetting.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.Designer.cs",
               "RelativeDocumentMoniker": "Tafelbezetting.Designer.cs",
-              "ToolTip": "C:\\Users\\NicoFelten\\source\\repos\\Tafelbezetting\\Tafelbezetting.Designer.cs",
+              "ToolTip": "C:\\Users\\NicoFelten\\GitHub\\Tafelbezetting\\Tafelbezetting\\Tafelbezetting.Designer.cs",
               "RelativeToolTip": "Tafelbezetting.Designer.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAIwLMAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAYDAAAAAAAAAAAnwBkDAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T12:41:12.643Z",
               "EditorCaption": ""
