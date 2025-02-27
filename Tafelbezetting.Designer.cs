@@ -579,6 +579,7 @@
             btnSave2.TabIndex = 16;
             btnSave2.Text = "Save";
             btnSave2.UseVisualStyleBackColor = true;
+            btnSave2.Click += btnSave2_Click;
             // 
             // btnNew2
             // 
@@ -588,6 +589,7 @@
             btnNew2.TabIndex = 15;
             btnNew2.Text = "New";
             btnNew2.UseVisualStyleBackColor = true;
+            btnNew2.Click += btnNew2_Click;
             // 
             // btnDelete2
             // 

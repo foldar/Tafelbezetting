@@ -369,7 +369,7 @@ namespace Tafelbezetting
         {
             string strSQL;
 
-            strSQL = "SELECT GebruikersID, Naam, HasLaptop FROM Gebruikers";
+            strSQL = "SELECT GebruikersID, Naam, HasLaptop FROM Gebruikers ORDER BY GebruikersID";
 
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = mstrConnectionString;
@@ -443,7 +443,7 @@ namespace Tafelbezetting
         {
             string strSQL;
 
-            strSQL = "SELECT TafelID, ComputerPresent FROM Tafels";
+            strSQL = "SELECT TafelID, ComputerPresent FROM Tafels ORDER BY TafelID";
 
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = mstrConnectionString;
@@ -534,6 +534,7 @@ namespace Tafelbezetting
                             clstafelgebruiker.Period = reader.GetInt32(2);
                             clstafelgebruiker.GebruikerID = reader.GetInt32(3);
                             mclstafelgebruikers.AddItem(clstafelgebruiker);
+                            mclstafelgebruikers.Item(0).GebruikerID=1;
                         }
                     }
                 }
@@ -661,8 +662,8 @@ namespace Tafelbezetting
         {
             cboTafel.SelectedIndex = 0;
             cboUser.SelectedIndex = 0;
-            cboWeekDay.SelectedIndex = 0;
-            cboDagdeel.SelectedIndex = 0;
+            cboWeekDay.SelectedIndex = -1;
+            cboDagdeel.SelectedIndex = -1;
         }
 
         private string GetQueryValue(bool booCheckYes, bool booCheckNo)
@@ -795,6 +796,13 @@ namespace Tafelbezetting
             mbooTab1New = true;
             UnlockTab1();
         }
+
+        private void btnNew2_Click(object sender, EventArgs e)
+        {
+            mbooTab2New = true;
+            UnlockTab2();
+        }
+
 
         private void btnSave0_Click(object sender, EventArgs e)
         {
@@ -932,6 +940,108 @@ namespace Tafelbezetting
             FillTafelGebruikers();
         }
 
+
+        private void btnSave2_Click(object sender, EventArgs e)
+        {
+            if (mbooTab2New == false)
+            {
+                int intRow;
+                if (grdTableUsers.SelectedRows.Count == 0)
+                {
+                    intRow = -1;
+                }
+                else
+                {
+                    intRow = grdTableUsers.SelectedRows[0].Index;
+                }
+                if (intRow > -1)
+                {
+                    //Update Query
+                    string strQuery;
+                    int intUserId;
+                    string strUserId;
+
+                    intUserId = cboUser.SelectedIndex - 1;
+                    if (intUserId == -1)
+                    {
+                        strUserId = null;
+                    }
+                    else
+                    {
+                        strUserId = mclsgebruikers.Item(intUserId).ID.ToString();
+                    }
+                    strQuery = "UPDATE tafelgebruikers SET UserID=";
+                    strQuery = strQuery + strUserId;
+                    strQuery = strQuery + " ,TafelID=" + cboTafel.Text;
+                    strQuery = strQuery + " ,DagInDeWeek=" + (cboWeekDay.SelectedIndex + 1).ToString();
+                    strQuery = strQuery + " ,Periode=" + (cboDagdeel.SelectedIndex + 1).ToString();
+                    strQuery = strQuery + " WHERE ";
+                    strQuery = strQuery + "TafelID = " + mclstafelgebruikers.Item(intRow).TafelNr.ToString();
+                    strQuery = strQuery + " AND DagInDeWeek = " + mclstafelgebruikers.Item(intRow).WeekDay.ToString();
+                    strQuery = strQuery + " AND Periode = " + mclstafelgebruikers.Item(intRow).Period.ToString();
+
+                    //Execute Query
+                    MySqlConnection conn = new MySqlConnection();
+                    conn.ConnectionString = mstrConnectionString;
+
+                    try
+                    {
+                        conn.Open();
+                        MySqlCommand command = new MySqlCommand(strQuery, conn);
+                        command.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (MySqlException er)
+                    {
+                        er = er;
+                    } 
+                }
+            }
+            else
+            {
+                //INSERT Query
+                int intUserId;
+                string strUserId;
+
+                intUserId = cboUser.SelectedIndex - 1;
+                if (intUserId == -1)
+                {
+                    strUserId = null;
+                }
+                else
+                {
+                    strUserId = mclsgebruikers.Item(intUserId).ID.ToString();
+                }
+
+                string strQuery;
+                strQuery = "INSERT INTO tafelgebruikers (UserId, TafelID, DagInDeWeek, Periode) VALUES (";
+                strQuery = strQuery + strUserId +", ";
+                strQuery = strQuery + cboTafel.Text + ", " + (cboWeekDay.SelectedIndex+1).ToString() + ", " + (cboDagdeel.SelectedIndex+1).ToString() + ")";
+                    
+
+                //Execute Query
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = mstrConnectionString;
+
+                try
+                {
+                    conn.Open();
+                    MySqlCommand command = new MySqlCommand(strQuery, conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (MySqlException er)
+                {
+                    er = er;
+                }
+            }
+            ClearTab2();
+            LockTab2();
+            LoadTafelGebruikers();
+            FillTafelGebruikers();
+
+        }
+
         private void btnDelete0_Click(object sender, EventArgs e)
         {
             int intRow;
@@ -1058,9 +1168,9 @@ namespace Tafelbezetting
                 //Update Query
                 string strQuery;
 
-                strQuery = "DELETE FROM TafelGebruikers WHERE TafelID=" + intTafelID.ToString();
-                strQuery = strQuery + " AND WeekDay=" + intDagVDWeek.ToString();
-                strQuery = strQuery + " AND Dagdeel=" + intDagdeel.ToString();
+                strQuery = "DELETE FROM TafelGebruikers WHERE TafelID = " + intTafelID.ToString();
+                strQuery = strQuery + " AND DagInDeWeek = " + intDagVDWeek.ToString();
+                strQuery = strQuery + " AND Periode = " + intDagdeel.ToString();
 
                 //Execute Query
                 MySqlConnection conn = new MySqlConnection();
