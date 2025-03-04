@@ -534,7 +534,7 @@ namespace Tafelbezetting
                             clstafelgebruiker.Period = reader.GetInt32(2);
                             clstafelgebruiker.GebruikerID = reader.GetInt32(3);
                             mclstafelgebruikers.AddItem(clstafelgebruiker);
-                            mclstafelgebruikers.Item(0).GebruikerID=1;
+                            mclstafelgebruikers.Item(0).GebruikerID = 1;
                         }
                     }
                 }
@@ -691,6 +691,16 @@ namespace Tafelbezetting
         }
         private void btnChange0_Click(object sender, EventArgs e)
         {
+            btnChange0.Enabled = false;
+            btnChange0.BackColor = Color.LightGray;
+            btnNew0.Enabled = false;
+            btnNew0.BackColor = Color.LightGray;
+            btnDelete0.Enabled = false;
+            btnDelete0.BackColor = Color.LightGray;
+            btnCancel0.Enabled = true;
+            btnCancel0.BackColor = Color.Transparent;
+            btnSave0.Enabled = true;
+            btnSave0.BackColor = Color.Transparent;
             int intRow;
             if (grdUsers.SelectedRows.Count == 0)
             {
@@ -724,6 +734,17 @@ namespace Tafelbezetting
 
         private void btnChange1_Click(object sender, EventArgs e)
         {
+            btnChange1.Enabled = false;
+            btnChange1.BackColor = Color.LightGray;
+            btnNew1.Enabled = false;
+            btnNew1.BackColor = Color.LightGray;
+            btnDelete1.Enabled = false;
+            btnDelete1.BackColor = Color.LightGray;
+            btnCancel1.Enabled = true;
+            btnCancel1.BackColor = Color.Transparent;
+            btnSave1.Enabled = true;
+            btnSave1.BackColor = Color.Transparent;
+
             int intRow;
             if (grdTafels.SelectedRows.Count == 0)
             {
@@ -756,6 +777,16 @@ namespace Tafelbezetting
 
         private void btnChange2_Click(object sender, EventArgs e)
         {
+            btnChange2.Enabled = false;
+            btnChange2.BackColor = Color.LightGray;
+            btnNew2.Enabled = false;
+            btnNew2.BackColor = Color.LightGray;
+            btnDelete2.Enabled = false;
+            btnDelete2.BackColor = Color.LightGray;
+            btnCancel2.Enabled = true;
+            btnCancel2.BackColor = Color.Transparent;
+            btnSave2.Enabled = true;
+            btnSave2.BackColor = Color.Transparent;
             int intRow;
             if (grdTableUsers.SelectedRows.Count == 0)
             {
@@ -787,18 +818,48 @@ namespace Tafelbezetting
 
         private void btnNew0_Click(object sender, EventArgs e)
         {
+            btnChange0.Enabled = false;
+            btnChange0.BackColor = Color.LightGray;
+            btnNew0.Enabled = false;
+            btnNew0.BackColor = Color.LightGray;
+            btnDelete0.Enabled = false;
+            btnDelete0.BackColor = Color.LightGray;
+            btnCancel0.Enabled = true;
+            btnCancel0.BackColor = Color.Transparent;
+            btnSave0.Enabled = true;
+            btnSave0.BackColor = Color.Transparent;
             mbooTab0New = true;
             UnlockTab0();
         }
 
         private void btnNew1_Click(object sender, EventArgs e)
         {
+            btnChange1.Enabled = false;
+            btnChange1.BackColor = Color.LightGray;
+            btnNew1.Enabled = false;
+            btnNew1.BackColor = Color.LightGray;
+            btnDelete1.Enabled = false;
+            btnDelete1.BackColor = Color.LightGray;
+            btnCancel1.Enabled = true;
+            btnCancel1.BackColor = Color.Transparent;
+            btnSave1.Enabled = true;
+            btnSave1.BackColor = Color.Transparent;
             mbooTab1New = true;
             UnlockTab1();
         }
 
         private void btnNew2_Click(object sender, EventArgs e)
         {
+            btnChange2.Enabled = false;
+            btnChange2.BackColor = Color.LightGray;
+            btnNew2.Enabled = false;
+            btnNew2.BackColor = Color.LightGray;
+            btnDelete2.Enabled = false;
+            btnDelete2.BackColor = Color.LightGray;
+            btnCancel2.Enabled = true;
+            btnCancel2.BackColor = Color.Transparent;
+            btnSave2.Enabled = true;
+            btnSave2.BackColor = Color.Transparent;
             mbooTab2New = true;
             UnlockTab2();
         }
@@ -815,7 +876,7 @@ namespace Tafelbezetting
                 }
                 else
                 {
-                    intRow = grdUsers.SelectedRows[0].Index;
+                   intRow = grdUsers.SelectedRows[0].Index;
                 }
 
                 //Update Query
@@ -870,6 +931,11 @@ namespace Tafelbezetting
             FillGebruikers();
             LoadTafelGebruikers();
             FillTafelGebruikers();
+            btnChange0.Enabled = true;
+            btnNew0.Enabled = true;
+            btnDelete0.Enabled = true;
+            btnCancel0.Enabled = false;
+            btnSave0.Enabled = false;
         }
 
         private void btnSave1_Click(object sender, EventArgs e)
@@ -938,6 +1004,11 @@ namespace Tafelbezetting
             FillTafels();
             LoadTafelGebruikers();
             FillTafelGebruikers();
+            btnChange1.Enabled = true;
+            btnNew1.Enabled = true;
+            btnDelete1.Enabled = true;
+            btnCancel1.Enabled = false;
+            btnSave1.Enabled = false;
         }
 
 
@@ -994,7 +1065,7 @@ namespace Tafelbezetting
                     catch (MySqlException er)
                     {
                         er = er;
-                    } 
+                    }
                 }
             }
             else
@@ -1015,9 +1086,9 @@ namespace Tafelbezetting
 
                 string strQuery;
                 strQuery = "INSERT INTO tafelgebruikers (UserId, TafelID, DagInDeWeek, Periode) VALUES (";
-                strQuery = strQuery + strUserId +", ";
-                strQuery = strQuery + cboTafel.Text + ", " + (cboWeekDay.SelectedIndex+1).ToString() + ", " + (cboDagdeel.SelectedIndex+1).ToString() + ")";
-                    
+                strQuery = strQuery + strUserId + ", ";
+                strQuery = strQuery + cboTafel.Text + ", " + (cboWeekDay.SelectedIndex + 1).ToString() + ", " + (cboDagdeel.SelectedIndex + 1).ToString() + ")";
+
 
                 //Execute Query
                 MySqlConnection conn = new MySqlConnection();
@@ -1039,7 +1110,11 @@ namespace Tafelbezetting
             LockTab2();
             LoadTafelGebruikers();
             FillTafelGebruikers();
-
+            btnChange2.Enabled = true;
+            btnNew2.Enabled = true;
+            btnDelete2.Enabled = true;
+            btnCancel2.Enabled = false;
+            btnSave2.Enabled = false;
         }
 
         private void btnDelete0_Click(object sender, EventArgs e)
@@ -1231,6 +1306,71 @@ namespace Tafelbezetting
         private void btnCreateDB_Click(object sender, EventArgs e)
         {
             CreateDatabase();
+        }
+
+        private void chkYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkYes.Checked == true && chkNo.Checked == true) { chkNo.Checked = false; }
+        }
+
+        private void chkNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkYes.Checked == true && chkNo.Checked == true) { chkYes.Checked = false; }
+        }
+
+        private void chkNo2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkYes2.Checked == true && chkNo2.Checked == true) { chkYes2.Checked = false; }
+        }
+
+        private void chkYes2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkYes2.Checked == true && chkNo2.Checked == true) { chkNo2.Checked = false; }
+        }
+
+        private void btnCancel0_Click(object sender, EventArgs e)
+        {
+            LockTab0();
+            btnCancel0.Enabled = false;
+            btnCancel0.BackColor = Color.LightGray;
+            btnDelete0.Enabled = true;
+            btnDelete0.BackColor = Color.Transparent;
+            btnChange0.Enabled = true;
+            btnChange0.BackColor = Color.Transparent;
+            btnNew0.Enabled = true;
+            btnNew0.BackColor = Color.Transparent;
+            btnSave0.Enabled = false;
+            btnSave0.BackColor = Color.LightGray;
+        }
+
+        private void btnCancel1_Click(object sender, EventArgs e)
+        {
+            LockTab1();
+            btnCancel1.Enabled = false;
+            btnCancel1.BackColor = Color.LightGray;
+            btnDelete1.Enabled = true;
+            btnDelete1.BackColor = Color.Transparent;
+            btnChange1.Enabled = true;
+            btnChange1.BackColor = Color.Transparent;
+            btnNew1.Enabled = true;
+            btnNew1.BackColor = Color.Transparent;
+            btnSave1.Enabled = false;
+            btnSave1.BackColor = Color.LightGray;
+        }
+
+        private void btnCancel2_Click(object sender, EventArgs e)
+        {
+            LockTab2();
+            btnCancel2.Enabled = false;
+            btnCancel2.BackColor = Color.LightGray;
+            btnDelete2.Enabled = true;
+            btnDelete2.BackColor = Color.Transparent;
+            btnChange2.Enabled = true;
+            btnChange2.BackColor = Color.Transparent;
+            btnNew2.Enabled = true;
+            btnNew2.BackColor = Color.Transparent;
+            btnSave2.Enabled = false;
+            btnSave2.BackColor = Color.LightGray;
         }
     }
 }

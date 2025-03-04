@@ -236,21 +236,26 @@
             // 
             // btnCancel0
             // 
+            btnCancel0.BackColor = Color.LightGray;
+            btnCancel0.Enabled = false;
             btnCancel0.Location = new Point(608, 376);
             btnCancel0.Name = "btnCancel0";
             btnCancel0.Size = new Size(75, 23);
             btnCancel0.TabIndex = 12;
             btnCancel0.Text = "Cancel";
-            btnCancel0.UseVisualStyleBackColor = true;
+            btnCancel0.UseVisualStyleBackColor = false;
+            btnCancel0.Click += btnCancel0_Click;
             // 
             // btnSave0
             // 
+            btnSave0.BackColor = Color.LightGray;
+            btnSave0.Enabled = false;
             btnSave0.Location = new Point(689, 376);
             btnSave0.Name = "btnSave0";
             btnSave0.Size = new Size(75, 23);
             btnSave0.TabIndex = 11;
             btnSave0.Text = "Save";
-            btnSave0.UseVisualStyleBackColor = true;
+            btnSave0.UseVisualStyleBackColor = false;
             btnSave0.Click += btnSave0_Click;
             // 
             // btnNew0
@@ -293,6 +298,7 @@
             chkNo.TabIndex = 7;
             chkNo.Text = "No";
             chkNo.UseVisualStyleBackColor = true;
+            chkNo.CheckedChanged += chkNo_CheckedChanged;
             // 
             // chkYes
             // 
@@ -304,6 +310,7 @@
             chkYes.TabIndex = 6;
             chkYes.Text = "Yes";
             chkYes.UseVisualStyleBackColor = true;
+            chkYes.CheckedChanged += chkYes_CheckedChanged;
             // 
             // lblHasLaptop
             // 
@@ -410,21 +417,26 @@
             // 
             // btnCancel1
             // 
+            btnCancel1.BackColor = Color.LightGray;
+            btnCancel1.Enabled = false;
             btnCancel1.Location = new Point(469, 379);
             btnCancel1.Name = "btnCancel1";
             btnCancel1.Size = new Size(75, 23);
             btnCancel1.TabIndex = 17;
             btnCancel1.Text = "Cancel";
-            btnCancel1.UseVisualStyleBackColor = true;
+            btnCancel1.UseVisualStyleBackColor = false;
+            btnCancel1.Click += btnCancel1_Click;
             // 
             // btnSave1
             // 
+            btnSave1.BackColor = Color.LightGray;
+            btnSave1.Enabled = false;
             btnSave1.Location = new Point(550, 379);
             btnSave1.Name = "btnSave1";
             btnSave1.Size = new Size(75, 23);
             btnSave1.TabIndex = 16;
             btnSave1.Text = "Save";
-            btnSave1.UseVisualStyleBackColor = true;
+            btnSave1.UseVisualStyleBackColor = false;
             btnSave1.Click += btnSave1_Click;
             // 
             // btnNew1
@@ -475,6 +487,7 @@
             chkNo2.TabIndex = 5;
             chkNo2.Text = "No";
             chkNo2.UseVisualStyleBackColor = true;
+            chkNo2.CheckedChanged += chkNo2_CheckedChanged;
             // 
             // chkYes2
             // 
@@ -486,6 +499,7 @@
             chkYes2.TabIndex = 4;
             chkYes2.Text = "Yes";
             chkYes2.UseVisualStyleBackColor = true;
+            chkYes2.CheckedChanged += chkYes2_CheckedChanged;
             // 
             // txtTafelNr
             // 
@@ -564,21 +578,26 @@
             // 
             // btnCancel2
             // 
+            btnCancel2.BackColor = Color.LightGray;
+            btnCancel2.Enabled = false;
             btnCancel2.Location = new Point(609, 225);
             btnCancel2.Name = "btnCancel2";
             btnCancel2.Size = new Size(75, 23);
             btnCancel2.TabIndex = 17;
             btnCancel2.Text = "Cancel";
-            btnCancel2.UseVisualStyleBackColor = true;
+            btnCancel2.UseVisualStyleBackColor = false;
+            btnCancel2.Click += btnCancel2_Click;
             // 
             // btnSave2
             // 
+            btnSave2.BackColor = Color.LightGray;
+            btnSave2.Enabled = false;
             btnSave2.Location = new Point(690, 225);
             btnSave2.Name = "btnSave2";
             btnSave2.Size = new Size(75, 23);
             btnSave2.TabIndex = 16;
             btnSave2.Text = "Save";
-            btnSave2.UseVisualStyleBackColor = true;
+            btnSave2.UseVisualStyleBackColor = false;
             btnSave2.Click += btnSave2_Click;
             // 
             // btnNew2
@@ -603,12 +622,13 @@
             // 
             // btnChange2
             // 
+            btnChange2.BackColor = Color.Transparent;
             btnChange2.Location = new Point(528, 179);
             btnChange2.Name = "btnChange2";
             btnChange2.Size = new Size(75, 23);
             btnChange2.TabIndex = 13;
             btnChange2.Text = "Change";
-            btnChange2.UseVisualStyleBackColor = true;
+            btnChange2.UseVisualStyleBackColor = false;
             btnChange2.Click += btnChange2_Click;
             // 
             // cboUser
